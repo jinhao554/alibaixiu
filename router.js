@@ -8,7 +8,7 @@ var usersController = require('./controllers/usersController')
 var router = express.Router()
 // 挂载路由配置
 
-
+///
 // 约定：/admin
 // 返回前台页面
 router.get('/',pagesController.getIndexPage)
