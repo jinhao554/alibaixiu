@@ -1,4 +1,5 @@
 $(function(){
+    //-----
   var index =location.href.indexOf('?')
   var routername
   if( index == -1){
