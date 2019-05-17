@@ -1,12 +1,13 @@
 $(function(){
-    //-----
-  var index =location.href.indexOf('?')
-  var routername
-  if( index == -1){
-        routername=location.href.substring(location.href.lastIndexOf('/')+1)
-     }else{
-       routername=location.href.substring(location.href.lastIndexOf('/')+1,index)
-    }
+   
+//   var index =location.href.indexOf('?')
+//   var routername
+//   if( index == -1){
+//         routername=location.href.substring(location.href.lastIndexOf('/')+1)
+//      }else{
+//        routername=location.href.substring(location.href.lastIndexOf('/')+1,index)
+//     }
+     var routername =itcast.getRouterName(location.href)
     // 2.获取到当前元素，为元素进行相关设置'
     var menu_posts=$('#menu-posts')
     if(routername =='posts' ||routername =='post-add' || routername =='categories'){

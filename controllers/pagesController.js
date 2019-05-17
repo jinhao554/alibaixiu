@@ -1,3 +1,4 @@
+var querystring=require('querystring')
 
 // 返回前台首页
 exports.getIndexPage = (req,res) => {
@@ -15,7 +16,18 @@ exports.getListPage = (req,res) => {
 exports.getAdminPage = (req,res) => {
     // // 下面这个配置的作用是配置ejs的模板文件夹，以后ejs会自动的去指定的目录下寻找页面文件
     // app.set('views',__dirname + '/views')
-    res.render('admin/index.ejs')
+    // res.render('admin/index.ejs')
+
+    // 因为是使用session进行了状态保持。所以这应该获取req.session
+    if(req.session.isLogin && req.session.isLogin == 'true'){
+        // res.render('/admin/index.ejs')
+        // console.log(1111)
+        res.render('admin/index.ejs')
+    }else{
+        res.redirect('/admin/login')
+    }
+  
+  
 }
 exports.getCategoriesPage = (req,res) => {
     res.render('admin/categories.ejs')

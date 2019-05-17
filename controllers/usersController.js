@@ -10,10 +10,17 @@ exports.login=(req,res)=>{
         }else{
             if(data){
             if(data.password == req.body.password){
-                 res.json({
-                     code:200,
-                     msg:'登录成功',
-                 })
+                //  res.json({
+                //      code:200,
+                //      msg:'登录成功',
+                //  })
+                req.session.isLogin='true',
+                req.session.currentUser=data
+                res.end(JSON.stringify({
+                    code:200,
+                    msg:'登陆成功'
+                }))
+                
               }else{
                 res.json({
                     code:201,
