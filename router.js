@@ -32,3 +32,4 @@ router.get('/',pagesController.getIndexPage)
       .post('/login',usersController.login)
 
 module.exports = router
+//暴露路由
