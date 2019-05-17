@@ -1,4 +1,6 @@
-var URL_name={
+//封装工具函数
+//获取url中的路由部分
+var itcast={
    getRouterName(urlSter){
     var index =urlSter.href.indexOf('?')
     var routername
